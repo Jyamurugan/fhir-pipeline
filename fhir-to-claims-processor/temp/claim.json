@@ -1,0 +1,96 @@
+{
+    "resourceType": "Claim",
+    "id": "506f2219-1a12-f4a7-ebdb-61aff58f7247",
+    "status": "active",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+          "code": "professional"
+        }
+      ]
+    },
+    "use": "claim",
+    "patient": {
+      "reference": "urn:uuid:ec1a6cad-8825-7b5c-4e14-257c696d5f11",
+      "display": "Arthur650 Roberts511"
+    },
+    "billablePeriod": {
+      "start": "2024-08-20T14:37:45Z",
+      "end": "2024-08-20T14:52:45Z"
+    },
+    "created": "2024-08-20T14:52:45Z",
+    "provider": {
+      "reference": "Organization?identifier=https://github.com/synthetichealth/synthea|9adfae03-673d-365d-9052-f705098fa3e4",
+      "display": "THE SHRINERS HOSPITAL FOR CHILDREN"
+    },
+    "priority": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+          "code": "normal"
+        }
+      ]
+    },
+    "facility": {
+      "reference": "Location?identifier=https://github.com/synthetichealth/synthea|4a965fe6-ab2b-3740-bb4b-ce27c570e2ed",
+      "display": "THE SHRINERS HOSPITAL FOR CHILDREN"
+    },
+    "diagnosis": [
+      {
+        "sequence": 1,
+        "diagnosisReference": {
+          "reference": "urn:uuid:7e72acce-f0a8-e95f-2c06-f28f1be962d1"
+        }
+      }
+    ],
+    "insurance": [
+      {
+        "sequence": 1,
+        "focal": true,
+        "coverage": {
+          "display": "Blue Cross Blue Shield"
+        }
+      }
+    ],
+    "item": [
+      {
+        "sequence": 1,
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "185345009",
+              "display": "Encounter for symptom (procedure)"
+            }
+          ],
+          "text": "Encounter for symptom (procedure)"
+        },
+        "encounter": [
+          {
+            "reference": "urn:uuid:617a2fd0-5ece-8204-d8ae-a83f4f72787c"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "diagnosisSequence": [
+          1
+        ],
+        "productOrService": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444814009",
+              "display": "Viral sinusitis (disorder)"
+            }
+          ],
+          "text": "Viral sinusitis (disorder)"
+        }
+      }
+    ],
+    "total": {
+      "value": 85.55,
+      "currency": "USD"
+    }
+  }

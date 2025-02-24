@@ -4,17 +4,10 @@ import configparser
 from datetime import datetime
 import os
 from io import BytesIO
+from config import MINIO_URL, ACCESS_KEY, SECRET_KEY, BUCKET_NAMES, FHIR_BUCKET_PATHS
 
-config = configparser.ConfigParser()
-config.read(os.path.join(os.path.dirname(__file__)), 'config.ini')
 
-MINIO_URL = config['minio']['url']
-ACCESS_KEY = config['minio']['access_key']
-SECRET_KEY = config['minio']['secret_key']
-BUCKET_NAME = config['minio']['bucket_name']
-FHIR_BUCKET_PATHS = config['minio']['fhir_bucket_paths'].split(',')
-
-print(MINIO_URL, ACCESS_KEY, SECRET_KEY, BUCKET_NAME, FHIR_BUCKET_PATHS)
+print(MINIO_URL, ACCESS_KEY, SECRET_KEY, BUCKET_NAMES, FHIR_BUCKET_PATHS)
 
 def create_text_file(client, bucket_name, path, content):
     try:
@@ -36,9 +29,10 @@ def create_bucket(client, bucket_name):
 
 def main():
     client = Minio(MINIO_URL, access_key=ACCESS_KEY, secret_key=SECRET_KEY, secure=False)
-    create_bucket(client, BUCKET_NAME)
+    for bucket_name in BUCKET_NAMES:
+        create_bucket(client, bucket_name)
     for path in FHIR_BUCKET_PATHS:
-        create_text_file(client, BUCKET_NAME, path, f"This is auto-generated text file\n{datetime.now()}")
+        create_text_file(client, BUCKET_NAMES[0], path, f"This is auto-generated text file\n{datetime.now()}")
 
 if __name__ == "__main__":
     main()

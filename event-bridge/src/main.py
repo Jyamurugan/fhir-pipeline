@@ -6,8 +6,9 @@ from config import MINIO_URL, ACCESS_KEY, SECRET_KEY, BUCKET_NAME, TODO_PATH, EX
 
 def poll_minio(client):
     try:
-        objects = client.list_objects(BUCKET_NAME, prefix=TODO_PATH, recursive=True)
-        objects = list(objects)[:50]
+        objects = client.list_objects(BUCKET_NAME, prefix=TODO_PATH, recursive=True, )
+        objects = list(objects)
+        print(objects)
         for obj in objects:
             if obj.object_name.endswith('.json'):
                 send_to_executor(obj.object_name)

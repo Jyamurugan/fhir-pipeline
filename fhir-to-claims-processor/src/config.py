@@ -8,9 +8,7 @@ config.read(config_path)
 MINIO_URL = config['minio']['url']
 ACCESS_KEY = config['minio']['access_key']
 SECRET_KEY = config['minio']['secret_key']
-BUCKET_NAME = config['minio']['bucket_name']
-TODO_PATH = config['minio']['bucket_path']
-
-EXECUTOR_ENDPOINT = config['executor']['endpoint']
-
-POLL_INTERVAL = int(config['settings']['poll_interval'])
+FHIR_BUCKET_NAME = config['minio']['fhir_bucket_name']
+ARCHIVE_BUCKET_NAME = config['minio']['archive_bucket_name']
+TODO_BUCKET_PATH = config['minio']['todo_bucket_path']
+ERROR_BUCKET_PATH = config['minio']['error_bucket_path']

@@ -6,7 +6,7 @@ authors = ["jyamurugan@gmail.com"]
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 minio = "^7.1.0"
 
 [build-system]
