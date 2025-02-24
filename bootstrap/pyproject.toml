@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "fhir-storage-bootstrap"
+version = "0.1.0"
+description = "A project to set up buckets and paths inside MinIO object storage"
+authors = ["jyamurugan@gmail.com"]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+minio = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
