@@ -6,8 +6,7 @@ import os
 from io import BytesIO
 
 config = configparser.ConfigParser()
-print(os.path.join(os.path.dirname(__file__), 'config.ini'))
-config.read(os.path.join(os.getcwd(), 'config.ini'))
+config.read(os.path.join(os.path.dirname(__file__)), 'config.ini')
 
 MINIO_URL = config['minio']['url']
 ACCESS_KEY = config['minio']['access_key']

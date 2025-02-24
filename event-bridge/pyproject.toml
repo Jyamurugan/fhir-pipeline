@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "event-bridge"
+version = "0.1.0"
+description = "This project acts as the event bridge between the MinIO object storage and the executor."
+authors = ["jyamurugan@gmail.com"]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+minio = "^7.1.0"
+requests = "^2.26.0"
+configparser = "^5.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

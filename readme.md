@@ -9,6 +9,11 @@
 ## binaries
 These binaries are required for the the development. These are windows versions
 1. [minio]()
+
+## Test data setyp (Synthea)
+Dowload it from here [Synthea](https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) JAR version.
+Need to install latest version of java
+
 ### minio
 Instructions available at [here]("https://min.io/docs/minio/windows/index.html")
 
