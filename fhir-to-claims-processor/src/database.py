@@ -38,7 +38,6 @@ class SQLiteDatabase:
             self.cursor = self.connection.cursor()
             self.cursor.execute(create_claims_table_query)
             self.connection.commit()
-            logging.info("Database connection successful")
         except sqlite3.Error as e:
             logging.error(f"Database connection failed: {e}")
             raise
@@ -47,7 +46,6 @@ class SQLiteDatabase:
         if self.connection:
             try:
                 self.connection.close()
-                logging.info("Database connection closed")
             except sqlite3.Error as e:
                 logging.error(f"Failed to close database connection: {e}")
     
@@ -68,7 +66,6 @@ class SQLiteDatabase:
                 claim.currency
             ))
             self.connection.commit()
-            logging.info("Claim added successfully")
         except sqlite3.Error as e:
             logging.error(f"Failed to add claim: {e}")
             self.connection.rollback()
@@ -81,7 +78,6 @@ class SQLiteDatabase:
             else:
                 self.cursor.execute(query)
             self.connection.commit()
-            logging.info("Query executed successfully")
         except sqlite3.Error as e:
             logging.error(f"Query execution failed: {e}")
             self.connection.rollback()
@@ -94,7 +90,6 @@ class SQLiteDatabase:
             else:
                 self.cursor.execute(query)
             results = self.cursor.fetchall()
-            logging.info("Data fetched successfully")
             return results
         except sqlite3.Error as e:
             logging.error(f"Fetching data failed: {e}")
