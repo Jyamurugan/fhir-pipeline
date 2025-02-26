@@ -1,4 +1,4 @@
-# FHIR Pipelie Orchestration
+# FHIR Pipeline Orchestration (Local)
 
 ## Technologies used
     synthea (For data generation)
@@ -10,7 +10,7 @@
 These binaries are required for the the development. These are windows versions
 1. [minio]()
 
-## Test data setyp (Synthea)
+## Test data setup (Synthea)
 Dowload it from here [Synthea](https://github.com/synthetichealth/synthea/wiki/Basic-Setup-and-Running) JAR version.
 Need to install latest version of java
 
