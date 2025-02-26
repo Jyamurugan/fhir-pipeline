@@ -6,10 +6,10 @@ from config import MINIO_URL, ACCESS_KEY, SECRET_KEY, BUCKET_NAME, TODO_PATH, EX
 
 def poll_minio(client):
     try:
-        objects = client.list_objects(BUCKET_NAME, prefix=TODO_PATH, recursive=True, )
+        objects = client.list_objects(BUCKET_NAME, prefix=TODO_PATH, recursive=True)
         objects = list(objects)
-        print(objects)
         for obj in objects:
+            print(obj.object_name)
             if obj.object_name.endswith('.json'):
                 send_to_executor(obj.object_name)
     except S3Error as err:

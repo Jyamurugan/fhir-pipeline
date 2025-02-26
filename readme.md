@@ -16,6 +16,13 @@ Need to install latest version of java
 
 ### minio
 Instructions available at [here]("https://min.io/docs/minio/windows/index.html")
+Download link [link](https://dl.min.io/server/minio/release/windows-amd64/minio.exe) to this directory
+Open cmd and run
+```
+minio.exe server /path/to/storage
+// Example
+minio.exe server D:\code\fhir-pipeline\object-storage
+```
 
 ```
 API: http://192.168.1.5:9000  http://127.0.0.1:9000
@@ -43,3 +50,13 @@ Archive will have many sub paths (Partition by Date) Format YYYY-MM-DD. For Exam
 2. 2025-02-25 Processed at 25 Feb 2025
 
 Archive by the using the compression technique (gz)
+
+
+### Running
+```
+minio.exe server D:\code\fhir-pipeline\object-storage
+cd event-bridge
+poetry run python src\main.py
+cd fhir-to-claims-processor
+poetry run python src\main.py
+```
